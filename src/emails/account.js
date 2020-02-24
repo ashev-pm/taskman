@@ -20,16 +20,16 @@ const sendFarewellEmail = (email, name) => {
     })
 };
 
-// const sendEmail = (to, from, subject, text) => {
-//     const emailToSend = {
-//         to,
-//         from,
-//         subject,
-//         text
-//     };
+const sendEmail = (to, from, subject, text) => {
+    // const emailToSend = {
+    //     to,
+    //     from,
+    //     subject,
+    //     text
+    // };
 
-//     sgMail.send(emailToSend); 
-// };
+    // sgMail.send(emailToSend); 
+};
 
 module.exports = {
     sendWelcomeEmail,
