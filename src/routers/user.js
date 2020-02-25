@@ -15,7 +15,8 @@ router.post('/users', async (req, res) => {
        sendWelcomeEmail(user.email, user.name);
        res.status(201).send({ user, token});        
     } catch (e) {
-       res.status(404).send(e);
+    console.log(e);
+       res.status(400).send(e);
     }
 });
 
@@ -77,7 +78,7 @@ router.patch('/users/me', auth, async (req, res) => {
 
 router.delete('/users/me', auth,  async (req, res) => {
    try {
-        req.user.remove();
+       await req.user.remove();
         res.send(req.user);
         sendFarewellEmail(req.user.email, req.user.name);
    } catch (e) {
